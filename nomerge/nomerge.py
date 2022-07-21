@@ -37,25 +37,26 @@ def dbg(x):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("filenames", metavar="filename", type=str, nargs='+', help='file to scan')
-    parser.add_argument("-d", "--basedir", default=".")
-    #parser.add_argument("-x", "--exclude-dirs", default=None)
+    print("GOOD JOB")
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("filenames", metavar="filename", type=str, nargs='+', help='file to scan')
+    # parser.add_argument("-d", "--basedir", default=".")
+    # #parser.add_argument("-x", "--exclude-dirs", default=None)
 
-    args = parser.parse_args()
-    dbg(f"ARGS: {args}")
-    if args.filenames is not None and len(args.filenames) > 0:
-        for tfile in args.filenames:
-            scan_single_file(tfile)
-    else:
-        scan_dir(args.basedir)
-    if len(no_merges) == 0:
-        print("OK")
-    elif len(no_merges) > 0:
-        print(f"NOMERGE found {len(no_merges)} times")
-        for item in no_merges:
-            print(f"[{item['file']}:{item['line_number']}] {item['line']}")
-        exit(1)
+    # args = parser.parse_args()
+    # dbg(f"ARGS: {args}")
+    # if args.filenames is not None and len(args.filenames) > 0:
+        # for tfile in args.filenames:
+            # scan_single_file(tfile)
+    # else:
+        # scan_dir(args.basedir)
+    # if len(no_merges) == 0:
+        # print("OK")
+    # elif len(no_merges) > 0:
+        # print(f"NOMERGE found {len(no_merges)} times")
+        # for item in no_merges:
+            # print(f"[{item['file']}:{item['line_number']}] {item['line']}")
+        # exit(1)
 
 
 if __name__ == "__main__":
