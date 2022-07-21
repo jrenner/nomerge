@@ -30,6 +30,11 @@ def scan_dir(basedir, excluded_dirs=None):
                 fpath = os.path.join(root, f)
                 scan_single_file(fpath)
 
+def dbg(x):
+    with open("/tmp/dbg.txt", "a") as fout:
+        fout.write(str(x) + "\n")
+        fout.flush()
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -38,6 +43,7 @@ def main():
     #parser.add_argument("-x", "--exclude-dirs", default=None)
 
     args = parser.parse_args()
+    dbg(f"ARGS: {args}")
     if args.target_file_list is not None and len(args.target_file_list) > 0:
         for tfile in args.target_file_list:
             scan_single_file(tfile)
