@@ -1,4 +1,5 @@
 import os
+import sys
 import argparse
 
 # NOMERGE exclude
@@ -32,13 +33,16 @@ def scan_dir(basedir, excluded_dirs=None):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--basedir", default=".")
+    #parser = argparse.ArgumentParser()
+    #parser.add_argument("-d", "--basedir", default=".")
     #parser.add_argument("-x", "--exclude-dirs", default=None)
 
-    args = parser.parse_args()
 
-    scan_dir(args.basedir)
+    #args = parser.parse_args()
+
+    #scan_dir(args.basedir)
+    for f in sys.argv[1:]:
+        scan_single_file(f)
     print(f"NOMERGE scanned {len(files_scanned)} files")
     if len(no_merges) == 0:
         print("OK")
