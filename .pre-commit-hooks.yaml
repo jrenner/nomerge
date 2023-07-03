@@ -1,0 +1,8 @@
+- id: nomerge
+  name: nomerge
+  description: "Don't allow a commit/merge if there's any instance of NOMERGE in the code"
+  entry: nomerge
+  language: python
+  minimum_pre_commit_version: 2.9.2
+  require_serial: true
+  types_or: [python, pyi]
